@@ -1,0 +1,3 @@
+[submodule "lib/cmake-helpers"]
+	path = lib/cmake-helpers
+	url = https://github.com/OperatorFoundation/cmake-helpers.git
