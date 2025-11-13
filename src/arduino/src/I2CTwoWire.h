@@ -1,20 +1,19 @@
 //
-// Created by Dr. Brandon Wiley on 11/12/25.
-//
-//
 // Arduino TwoWire adapter for I2C interface
 //
 
-#ifndef FLUX_CPP_I2CTWOWIRE_H
-#define FLUX_CPP_I2CTWOWIRE_H
+#ifndef I2CTWOWIRE_H
+#define I2CTWOWIRE_H
 
-#include "I2C.h"
+#include <flux-cpp.h>
 #include <Wire.h>
 
 class I2CTwoWire : public I2C {
   public:
     explicit I2CTwoWire(TwoWire& wire);
     ~I2CTwoWire() override = default;
+
+    void setLogger(Logger* logger);
 
     // Communication
     void beginTransmission(uint8_t address) override;
@@ -34,6 +33,10 @@ class I2CTwoWire : public I2C {
 
   private:
     TwoWire& wire;
+    Logger* logger = nullptr;
+    const char* wireName;  // "0", "1", "2", or nullptr
+
+    const char* getWireId() const;  // Helper to get wire identifier
 };
 
-#endif //FLUX_CPP_I2CTWOWIRE_H
+#endif // I2CTWOWIRE_H

@@ -2,10 +2,11 @@
 #include <Arduino.h>
 #include <Wire.h>
 
+I2CTwoWire i2c(Wire);
+
 void setup()
 {
   Wire.begin();
-  I2CTwoWire::begin(Wire);
 }
 
 void loop()

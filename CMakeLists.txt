@@ -38,10 +38,14 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/lib")
   endif()
 endif()
 
-include(lib/cmake-helpers/arduino-cli.cmake)
+set(CMAKE_HELPERS ${CMAKE_SOURCE_DIR}/lib/cmake-helpers)
+set(FLUX_CPP ${CMAKE_SOURCE_DIR}/src/cpp)
+set(FLUX_ARDUINO ${CMAKE_SOURCE_DIR}/src/arduino)
+
+include(${CMAKE_HELPERS}/arduino-cli.cmake)
 
 add_subdirectory("src/cpp")
-#add_subdirectory("src/arduino")
+add_subdirectory("src/arduino")
 add_subdirectory("src/macos")
 add_subdirectory("src/stdio")
 add_subdirectory("src/tests")
