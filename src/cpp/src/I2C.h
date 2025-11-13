@@ -5,8 +5,8 @@
 // Cross-platform I2C interface
 //
 
-#ifndef FLUX_CPP_I2C_H
-#define FLUX_CPP_I2C_H
+#ifndef ONDA_CPP_I2C_H
+#define ONDA_CPP_I2C_H
 
 #include <cstdint>
 #include <cstddef>
@@ -32,4 +32,4 @@ class I2C {
     virtual int peek() = 0;
 };
 
-#endif //FLUX_CPP_I2C_H
+#endif //ONDA_CPP_I2C_H

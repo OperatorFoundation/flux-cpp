@@ -1,14 +1,14 @@
-add_library(flux-macos src/flux-macos.h)
+add_library(onda-macos src/onda-macos.h)
 
-target_link_libraries(flux-macos PUBLIC flux-cpp)
+target_link_libraries(onda-macos PUBLIC onda)
 
-target_include_directories(flux-macos PRIVATE src)
+target_include_directories(onda-macos PRIVATE src)
 
 if(APPLE)
-    target_link_libraries(flux-macos PUBLIC
+    target_link_libraries(onda-macos PUBLIC
         "-framework CoreFoundation"
         "-framework IOKit"
     )
 endif()
 
-target_compile_features(flux-macos PUBLIC cxx_std_17)
+target_compile_features(onda-macos PUBLIC cxx_std_17)

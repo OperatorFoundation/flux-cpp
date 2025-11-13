@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
-project(flux-cpp)
+project(onda)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -39,13 +39,12 @@ if(EXISTS "${PROJECT_SOURCE_DIR}/lib")
 endif()
 
 set(CMAKE_HELPERS ${CMAKE_SOURCE_DIR}/lib/cmake-helpers)
-set(FLUX_CPP ${CMAKE_SOURCE_DIR}/src/cpp)
-set(FLUX_ARDUINO ${CMAKE_SOURCE_DIR}/src/arduino)
+set(ONDA_CPP ${CMAKE_SOURCE_DIR}/src/cpp)
+set(ONDA_ARDUINO ${CMAKE_SOURCE_DIR}/src/arduino)
 
 include(${CMAKE_HELPERS}/arduino-cli.cmake)
 
 add_subdirectory("src/cpp")
 add_subdirectory("src/arduino")
 add_subdirectory("src/macos")
-add_subdirectory("src/stdio")
 add_subdirectory("src/tests")

@@ -12,8 +12,9 @@ class EXPORT Clock
   public:
     virtual ~Clock() = default;
 
-    virtual int now();
-    virtual void wait(int durationInMilliseconds); // In milliseconds
+    virtual int now() = 0; // In milliseconds
+    virtual void wait(int durationInMilliseconds) = 0; // In milliseconds
+    virtual void waitMicroseconds(int durationInMicroseconds) = 0; // In microseconds
 };
 
 #endif //CLOCK_H
