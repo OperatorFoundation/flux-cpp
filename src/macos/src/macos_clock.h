@@ -12,12 +12,13 @@
 
 class macOSClock : public Clock
 {
-  macOSClock();
-  ~macOSClock();
+  public:
+    macOSClock();
+    ~macOSClock();
 
-  int now() override;
-  void wait(int durationInMilliseconds) override; // In milliseconds
-  void waitMicroseconds(int durationInMicroseconds) override; // In microseconds
+    int now() override;
+    void wait(int durationInMilliseconds) override; // In milliseconds
+    void waitMicroseconds(int durationInMicroseconds) override; // In microseconds
 
   private:
     std::chrono::steady_clock::time_point startTime;
